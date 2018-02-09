@@ -1,0 +1,31 @@
+{
+    "apps": [
+    {
+        "name": "whereNode",
+        "script": "app.js",
+        "env": 　
+        {
+            "COMMON_VARIABLE": "true"
+        },
+        "env_production":
+        {
+            "NODE_ENV": "production"
+        }
+    }],
+    "deploy":
+    {
+        "production":
+        {
+            "user": "one",
+            "host": ["47.94.237.92"],
+            "ref": "origin/master",
+            "repo": "git@github.com:lylong93/wherenode.git",
+            "path": "/www/whereapp/wherenode/production",
+            "ssh_options": "StrictHostKeyChecking=no",
+            "env":
+            {
+                "NODE_ENV": "production",
+            }
+        }
+    }
+}
