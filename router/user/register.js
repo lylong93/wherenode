@@ -4,7 +4,6 @@ var { userModel } = require('../models');
 
 module.exports = function register(body) {
     const { name, pwd } = body
-    console.log(body)
     return new Promise(function(resolve, reject) {
         if (!name | !pwd) {
             reject({ err: 3, msg: '参数错误' })

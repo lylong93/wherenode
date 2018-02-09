@@ -1,8 +1,8 @@
-const register = require('./register');
+// const register = require('./register');
 const login = require('./login');
 
 const userapi = {
     login,
-    register
+    // register
 }
 module.exports = userapi
