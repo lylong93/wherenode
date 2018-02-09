@@ -35,35 +35,35 @@ router.get('/', async(ctx, next) => {
     ctx.body = body;
 });
 // 注册
-router.post('/user/rejister', async(ctx) => {
-    const body = ctx.request.body
-    await userapi.register(body)
-        .then((data) => {
-            ctx.body = data
-        })
-        .catch((err) => {
-            ctx.body = err
-        })
-})
-// 登录
-router.post('/user/login', async(ctx) => {
-    const body = ctx.request.body
-    ctx.session.views = Math.random();
-    await userapi.login(body)
-        .then((data) => {
-            ctx.body = data
-        })
-        .catch((err) => {
-            ctx.body = err
-        })
-})
-// 退出
-router.get('/user/logout', async(ctx) => {
-    console.log(ctx.session)
-    ctx.session = null;
-    console.log(ctx.session)
-    ctx.body = 'ok'
-})
+// router.post('/user/rejister', async(ctx) => {
+//     const body = ctx.request.body
+//     await userapi.register(body)
+//         .then((data) => {
+//             ctx.body = data
+//         })
+//         .catch((err) => {
+//             ctx.body = err
+//         })
+// })
+// // 登录
+// router.post('/user/login', async(ctx) => {
+//     const body = ctx.request.body
+//     ctx.session.views = Math.random();
+//     await userapi.login(body)
+//         .then((data) => {
+//             ctx.body = data
+//         })
+//         .catch((err) => {
+//             ctx.body = err
+//         })
+// })
+// // 退出
+// router.get('/user/logout', async(ctx) => {
+//     console.log(ctx.session)
+//     ctx.session = null;
+//     console.log(ctx.session)
+//     ctx.body = 'ok'
+// })
 // 发布活动
 router.post('/action/publish', upload.single('avatar'), async(ctx) => {
     const body = ctx.req.body
