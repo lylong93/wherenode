@@ -42,5 +42,5 @@ app.use(bodyParser())
 app.use(router.routes());
 app.use(serve(__dirname + '/uploads'));
 
-app.listen(3389);
+app.listen(3000);
 console.log('server in  3000...');
