@@ -1,14 +1,15 @@
-import models from '../models'
+// import models from '../models'
+var { userModel } = require('../models');
 var bcrypt = require('bcryptjs');
 
-export default function register(body) {
+module.exports = function register(body) {
     const { name, pwd } = body
     console.log(body)
     return new Promise(function(resolve, reject) {
         if (!name | !pwd) {
             reject({ err: 3, msg: '参数错误' })
         }
-        models.findOne({ name: name })
+        userModel.findOne({ name: name })
             .then((doc) => {
                 if (doc) {
                     reject({ err: 1, msg: '该用户存在' })
@@ -22,7 +23,7 @@ export default function register(body) {
         const save = () => {
             console.log('save')
 
-            const newUser = new models({
+            const newUser = new userModel({
                 name,
                 pwd,
             })

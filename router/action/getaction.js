@@ -1,6 +1,6 @@
-import { actionModel } from '../models'
-
-export default function login(skip) {
+// import { actionModel } from '../models'
+var { actionModel } = require('../models');
+module.exports = function login(skip) {
     return new Promise(function(resolve, reject) {
         var query = actionModel.find()
         const index = Number(skip)

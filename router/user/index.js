@@ -1,9 +1,8 @@
-import login from './longin'
-import register from './register'
+const register = require('./register');
+const login = require('./login');
 
 const userapi = {
     login,
     register
 }
-
-export default userapi
+module.exports = userapi

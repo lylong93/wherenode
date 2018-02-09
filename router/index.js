@@ -1,7 +1,9 @@
-import newsapi from './news';
-import userapi from './user';
-import actionapi from './action';
-
+// import newsapi from './news';
+// import userapi from './user';
+// import actionapi from './action';
+const newsapi = require('./news');
+const actionapi = require('./action');
+const userapi = require('./user');
 const router = require('koa-router')();
 
 const multer = require('koa-multer');

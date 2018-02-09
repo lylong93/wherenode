@@ -1,6 +1,6 @@
-import { actionModel } from '../models'
-
-export default function login(body) {
+// import { actionModel } from '../models'
+var { actionModel } = require('../models');
+module.exports = function login(body) {
     const { title, time, address, main, bgurl } = body
     return new Promise(function(resolve, reject) {
         if (!title || !time || !address | !main) {

@@ -1,4 +1,4 @@
-export const user = {
+const user = {
     'name': {
         type: String,
         unique: true
@@ -8,7 +8,7 @@ export const user = {
     }
 }
 
-export const action = {
+const action = {
     'title': {
         type: String,
     },
@@ -24,4 +24,8 @@ export const action = {
     'bgurl': {
         type: String,
     }
+}
+module.exports = {
+    user,
+    action
 }

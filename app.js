@@ -1,4 +1,5 @@
-import router from './router';
+// import router from './router';
+const router = require('./router');
 const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
 const session = require('koa-session');

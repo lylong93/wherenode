@@ -1,6 +1,6 @@
-import { userModel } from '../models'
-
-export default function login(body) {
+// import { userModel } from '../models'
+var { userModel } = require('../models');
+module.exports = function login(body) {
     const { name, pwd } = body
     return new Promise(function(resolve, reject) {
         if (!name || !pwd) {

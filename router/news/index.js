@@ -1,7 +1,7 @@
-import get from './get'
+const get = require('./get');
 
 const newsapi = {
-  get
+    get
 }
 
-export default newsapi
+module.exports = newsapi
