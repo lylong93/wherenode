@@ -19,6 +19,7 @@
         {
             "user": "one",
             "host": ["47.94.237.92"],
+            "port": "3389",
             "ref": "origin/master",
             "repo": "git@github.com:lylong93/wherenode.git",
             "path": "/www/whereapp/wherenode/production",
