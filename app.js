@@ -14,16 +14,16 @@ io.on('connection', function(socket) {
 });
 
 // mongodb
-const mongoose = require('mongoose');
-const url = 'mongodb://localhost/where';
-mongoose.Promise = global.Promise;
-mongoose.connect(url, { useMongoClient: true })
-    .then(() => {
-        console.log('mongoDB OK')
-    })
-    .catch((err) => {
-        console.log(err)
-    })
+// const mongoose = require('mongoose');
+// const url = 'mongodb://localhost/where';
+// mongoose.Promise = global.Promise;
+// mongoose.connect(url, { useMongoClient: true })
+//     .then(() => {
+//         console.log('mongoDB OK')
+//     })
+//     .catch((err) => {
+//         console.log(err)
+//     })
 
 // session
 app.keys = ['where'];
