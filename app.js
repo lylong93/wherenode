@@ -13,7 +13,7 @@ io.on('connection', function(socket) {
     console.log('a user connected');
 });
 
-mongodb
+//mongodb
 const mongoose = require('mongoose');
 const url = 'mongodb://one/where';
 mongoose.Promise = global.Promise;
