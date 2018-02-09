@@ -16,6 +16,9 @@ io.on('connection', function(socket) {
 //mongodb
 const mongoose = require('mongoose');
 const url = 'mongodb://127.0.0.1/where';
+if (env === 'development') {
+    const url = 'mongodb://localhost/where';
+}
 mongoose.Promise = global.Promise;
 mongoose.connect(url, { useMongoClient: true })
     .then(() => {
