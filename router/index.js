@@ -31,8 +31,7 @@ router.get('/api/news/:page/:elite', async(ctx, next) => {
 });
 
 router.get('/', async(ctx, next) => {
-    console.log('ok')
-    ctx.body = body;
+    ctx.body = 'ok';
 });
 // 注册
 // router.post('/user/rejister', async(ctx) => {
