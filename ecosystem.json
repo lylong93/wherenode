@@ -3,6 +3,7 @@
     {
         "name": "whereNode",
         "script": "app.js",
+        "node_args": "--harmony",
         "env": 　
         {
             "COMMON_VARIABLE": "true"
