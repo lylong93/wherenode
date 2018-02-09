@@ -1,5 +1,5 @@
 const { userModel } = require('../models');
-const bcrypt = require('bcryptjs');
+// const bcrypt = require('bcryptjs');
 // import models from '../models'
 
 module.exports = function register(body) {
