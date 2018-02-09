@@ -2,7 +2,8 @@ const register = require('./register');
 const login = require('./login');
 
 const userapi = {
+    register,
     login,
-    register
+
 }
 module.exports = userapi
