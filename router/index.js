@@ -44,18 +44,18 @@ router.get('/', async(ctx, next) => {
 //             ctx.body = err
 //         })
 // })
-// // 登录
-// router.post('/user/login', async(ctx) => {
-//     const body = ctx.request.body
-//     ctx.session.views = Math.random();
-//     await userapi.login(body)
-//         .then((data) => {
-//             ctx.body = data
-//         })
-//         .catch((err) => {
-//             ctx.body = err
-//         })
-// })
+// 登录
+router.post('/user/login', async(ctx) => {
+    const body = ctx.request.body
+    ctx.session.views = Math.random();
+    await userapi.login(body)
+        .then((data) => {
+            ctx.body = data
+        })
+        .catch((err) => {
+            ctx.body = err
+        })
+})
 // // 退出
 // router.get('/user/logout', async(ctx) => {
 //     console.log(ctx.session)

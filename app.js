@@ -15,10 +15,13 @@ io.on('connection', function(socket) {
 
 //mongodb
 const mongoose = require('mongoose');
+//线上
 const url = 'mongodb://127.0.0.1:27017/where';
-// if (env === 'development') {
-//     const url = 'mongodb://localhost/where';
-// }
+//开发环境
+if (process.env.NODE_ENV = 'development') {
+    const url = 'mongodb://localhost/where';
+}
+
 mongoose.Promise = global.Promise;
 mongoose.connect(url, { useMongoClient: true })
     .then(() => {
