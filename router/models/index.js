@@ -1,4 +1,3 @@
-// import { user, action } from './schemas'
 const { user, action } = require('./schemas');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;

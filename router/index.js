@@ -5,7 +5,7 @@ const newsapi = require('./news');
 const actionapi = require('./action');
 const userapi = require('./user');
 const router = require('koa-router')();
-
+// 上传
 const multer = require('koa-multer');
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
@@ -20,7 +20,7 @@ const upload = multer({ storage: storage })
 const SUCCESS = 0;
 const ERR = 1;
 // 获取新闻
-router.get('/api/news/:page/:elite', async(ctx, next) => {
+router.get('/news/:page/:elite', async(ctx, next) => {
     const params = ctx.params;
     const data = await newsapi.get(params);
     const body = {
@@ -34,16 +34,16 @@ router.get('/', async(ctx, next) => {
     ctx.body = 'ok';
 });
 // 注册
-// router.post('/user/rejister', async(ctx) => {
-//     const body = ctx.request.body
-//     await userapi.register(body)
-//         .then((data) => {
-//             ctx.body = data
-//         })
-//         .catch((err) => {
-//             ctx.body = err
-//         })
-// })
+router.post('/user/rejister', async(ctx) => {
+    const body = ctx.request.body
+    await userapi.register(body)
+        .then((data) => {
+            ctx.body = data
+        })
+        .catch((err) => {
+            ctx.body = err
+        })
+})
 // 登录
 router.post('/user/login', async(ctx) => {
     const body = ctx.request.body
@@ -57,12 +57,12 @@ router.post('/user/login', async(ctx) => {
         })
 })
 // // 退出
-// router.get('/user/logout', async(ctx) => {
-//     console.log(ctx.session)
-//     ctx.session = null;
-//     console.log(ctx.session)
-//     ctx.body = 'ok'
-// })
+router.get('/user/logout', async(ctx) => {
+    console.log(ctx.session)
+    ctx.session = null;
+    console.log(ctx.session)
+    ctx.body = 'ok'
+})
 // 发布活动
 router.post('/action/publish', upload.single('avatar'), async(ctx) => {
     const body = ctx.req.body

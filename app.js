@@ -6,12 +6,6 @@ const session = require('koa-session');
 const serve = require('koa-static');
 
 const app = new Koa();
-// socket
-const http = require('http').Server(app.callback());
-const io = require('socket.io')(http);
-io.on('connection', function(socket) {
-    console.log('a user connected');
-});
 
 //mongodb
 const mongoose = require('mongoose');
